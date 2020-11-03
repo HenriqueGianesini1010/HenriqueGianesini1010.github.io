@@ -70,7 +70,7 @@ function criarCacto() {
                 '<h1 class ="fim-de-jogo">Fim de  Jogo</h1>';
 
         }else {
-            cacto -= 10;
+            cactoPosition -= 10;
             cacto.style.left = cactoPosition + 'px';
 
         }
