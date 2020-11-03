@@ -57,14 +57,24 @@ function criarCacto() {
     background.appendChild(cacto);
 
     let intervaloEsquerda = setInterval(()=>{
+        
         if (cactoPosition <= -60) {
             clearInterval(intervaloEsquerda);
             // Remover da tela
             background.removeChild(cacto);
-        } else {
-            cactoPosition -= 10;
+        } else if(cactoPosition >0 &&
+            cactoPosition <=60 &&
+            dinoPosition <= 60) {
+                clearTimeout(tempoCacto);
+                document.body.innerHTML = 
+                '<h1 class ="fim-de-jogo">Fim de  Jogo</h1>';
+
+        }else {
+            cacto -= 10;
             cacto.style.left = cactoPosition + 'px';
+
         }
+        
 
     },20);
     let tempoCacto = setTimeout(criarCacto, tempoRandom);
